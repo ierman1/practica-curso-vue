@@ -22,7 +22,8 @@ const routes = [
 
 const router = new VueRouter({
 	routes: routes,
-	mode: 'history'
+	mode: 'history',
+	base: '/practica-curso-vue/'
 })
 
 export default router
