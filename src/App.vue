@@ -1,6 +1,6 @@
 <template>
     <div id="app">
-        <header class="container-sm py-3 border-bottom">
+        <header class="container-sm mt-4 py-3 border-bottom">
             <b-button v-b-toggle.sidebar variant="dark">
                 <font-awesome-icon icon="bars"></font-awesome-icon>
             </b-button>
@@ -14,7 +14,7 @@
             <router-view/>
         </main>
         <footer class="bg-secondary text-white text-center p-3">
-            Footer
+            Germán Pérez Bordera · <a class="text-white" href="mailto:germanperezb98@gmail.com">germanperezb98@gmail.com</a>
         </footer>
     </div>
 </template>
