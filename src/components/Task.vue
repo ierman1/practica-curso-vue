@@ -9,7 +9,7 @@
 					</span>
 					<font-awesome-icon icon="arrow-right"></font-awesome-icon>
 				</b-button>
-				<b-button v-if="task.status == 'done'" :variant="variant" v-on:click="emitChange('todo')">
+				<b-button v-if="task.status == 'done'" :variant="variant" v-on:click="emitChange('todo')" data-toggle="tooltip">
 					<span class="sr-only">
 						Cambiar estado a 'pendiente'
 					</span>

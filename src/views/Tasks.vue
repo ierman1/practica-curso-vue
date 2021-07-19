@@ -1,5 +1,6 @@
 <template>
 	<div class="tasks">
+		<h2 class="mb-5 font-weight-bold">Gestor de tareas</h2>
 		<form v-on:submit="createTask">
 			<div class="d-flex align-items-center">
 				<b-form-group 
@@ -18,7 +19,7 @@
 				</b-form-group>
 				<b-button variant="primary" size="lg" style="margin-top: -8px;" type="submit">
 					<span class="sr-only">
-						Cambiar estado a 'finalizada'
+						Crear nueva tarea
 					</span>
 					<font-awesome-icon icon="plus"></font-awesome-icon>
 				</b-button>

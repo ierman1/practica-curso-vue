@@ -2,6 +2,9 @@
     <div id="app">
         <header class="container-sm mt-4 py-3 border-bottom">
             <b-button v-b-toggle.sidebar variant="dark">
+                <span class="sr-only">
+                    Desplegar menú lateral
+                </span>
                 <font-awesome-icon icon="bars"></font-awesome-icon>
             </b-button>
             <h1 class="font-weight-bold text-center">Proyecto VUE</h1>
@@ -55,6 +58,11 @@
         name: 'App',
         components: {
             Sidebar
+        },
+        head: {
+            htmlAttrs: {
+                lang: "es"
+            }
         }
     }
 </script>
