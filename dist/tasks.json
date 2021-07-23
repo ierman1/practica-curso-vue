@@ -1,0 +1,6 @@
+[
+	{ "id": 1, "text": "Hacer la compra", "status": "done" },
+	{ "id": 2, "text": "Pasear al perro", "status": "done" },
+	{ "id": 3, "text": "Hacer accesible esta pàgina", "status": "todo" },
+	{ "id": 4, "text": "Ir al gimnasio", "status": "todo" }
+]
