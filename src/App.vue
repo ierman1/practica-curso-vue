@@ -59,10 +59,9 @@
         components: {
             Sidebar
         },
-        head: {
-            htmlAttrs: {
-                lang: "es"
-            }
+        mounted() {
+            const html = document.documentElement // returns the html tag
+            html.setAttribute('lang', 'es')
         }
     }
 </script>

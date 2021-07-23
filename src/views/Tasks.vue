@@ -1,5 +1,5 @@
 <template>
-	<div class="tasks">
+	<section id="tasks">
 		<h2 class="mb-5 font-weight-bold">Gestor de tareas</h2>
 		<form v-on:submit="createTask">
 			<div class="d-flex align-items-center">
@@ -29,45 +29,35 @@
 			<div class="col-12 col-lg-6">
 				<div class="todo-tasks mt-5">
 					<h2 class="mb-3">Tareas por hacer</h2>
-					<Task v-for="task in tasks.filter(task => task.status == 'todo')" v-bind:key="task.text" :task="task" @changed="changeStatus" @deleted="deleteTask"></Task>
+					<Task v-for="task in tasks.filter(task => task.status == 'todo')" v-bind:key="task.id" :task="task" @changed="changeStatus" @deleted="deleteTask"></Task>
 				</div>
 			</div>
 			<div class="col-12 col-lg-6">
 				<div class="done-tasks mt-5">
 					<h2 class="mb-3">Tareas completadas</h2>
-					<Task v-for="task in tasks.filter(task => task.status == 'done')" v-bind:key="task.text" :task="task" @changed="changeStatus" @deleted="deleteTask"></Task>
+					<Task v-for="task in tasks.filter(task => task.status == 'done')" v-bind:key="task.id" :task="task" @changed="changeStatus" @deleted="deleteTask"></Task>
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script>
 	import Task from '@/components/Task.vue'
+	import TaskData from '../classes/TaskData.js'
 
 	export default {
 		name: 'Tasks',
 		data: () => {
 			return {
 				newTask: "",
-				tasks: [
-					{ id: 1, text: 'Hacer la compra', status: 'done' },
-					{ id: 2, text: 'Pasear al perro', status: 'done' },
-					{ id: 3, text: 'Hacer accesible esta pàgina', status: 'todo' },
-					{ id: 4, text: 'Ir al gimnasio', status: 'todo' }
-				]
+				tasks: []
 			}
 		},
 		methods: {
 			createTask: function(e) {
 				e.preventDefault();
-
-				this.tasks.push({
-					id: Date.now(),
-					text: this.newTask,
-					status: 'todo'
-				});
-
+				this.tasks.push(new TaskData(this.newTask));
 				this.newTask = "";
 			},
 			changeStatus(data) {
@@ -77,7 +67,9 @@
 				this.tasks.splice(this.tasks.indexOf(this.tasks.find(task => task.id == id)), 1);
 			}
 		},
-		mounted: () => {
+		mounted: function () {
+			TaskData.getFromFile().then(response => (this.tasks = response.data));
+
 			document.onkeypress = function (e) {
 				e = e || window.event;
 				if (e.keyCode == 47) {
