@@ -13,7 +13,7 @@
 					<tr>
 						<td scope="row">Germán Pérez Bordera</td>
 						<td>
-							<a href="mailto:germanperezb98@gmail.com">germanperezb98@gmail.com</a>
+							<a href="mailto:germanperezb98@gmail.com" class="font-weight-bold">germanperezb98@gmail.com</a>
 						</td>
 					</tr>
 				</tbody>
@@ -32,21 +32,21 @@
 				<tbody>
 					<tr>
 						<td scope="row">
-							<img src="/vue_logo.png" alt="Logo VueJS" height="50">
+							<img src="@/assets/vue_logo.png" alt="Logo VueJS" height="50">
 						</td>
 						<td>VueJS</td>
 						<td>2.6.14</td>
 					</tr>
 					<tr>
 						<td scope="row">
-							<img src="/bootstrapvue_logo.png" alt="Logo Bootstrap-Vue" height="50">
+							<img src="@/assets/bootstrapvue_logo.png" alt="Logo Bootstrap-Vue" height="50">
 						</td>
 						<td>Bootstrap-Vue</td>
 						<td>2.21.2</td>
 					</tr>
 					<tr>
 						<td scope="row">
-							<img src="/fontawesome_logo.png" alt="Logo Fontawesome" height="50">
+							<img src="@/assets/fontawesome_logo.png" alt="Logo Fontawesome" height="50">
 						</td>
 						<td>Fontawesome</td>
 						<td>5.15.3</td>

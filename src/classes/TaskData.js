@@ -8,7 +8,7 @@ export default class TaskData
 		this.status = "todo";
 	}
 
-	static getFromFile(file = "/tasks.json") {
+	static getFromFile(file = "./tasks.json") {
 		return axios.get(file);
 	}
 }

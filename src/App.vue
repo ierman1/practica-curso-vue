@@ -67,5 +67,7 @@
 </script>
 
 <style>
-
+    a {
+        color: #0051A8;
+    }
 </style>
